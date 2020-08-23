@@ -86,4 +86,14 @@ router.post("/uploadVideo", (req, res) => {
     })
 });
 
+router.get("/getVideos", (req, res) => {
+    // 비디오를 DB에서 가져와서 클라이언트에 보낸다.
+    Video.find()
+        .populate('writer')
+        .exec((err, videos) => {
+            if(err) return res.status(400).send(err);
+            res.status(200).json({ success: true, videos })
+        })
+});
+
 module.exports = router;
