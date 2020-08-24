@@ -4,7 +4,7 @@ const router = express.Router();
 const { Subscriber } = require("../models/Subscriber");
 
 //=================================
-//             Video
+//             Subscriber
 //=================================
 
 router.post("/subscribeNumber", (req, res) => {
