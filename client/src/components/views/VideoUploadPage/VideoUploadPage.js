@@ -111,7 +111,6 @@ function VideoUploadPage(props) {
             </div>
             <Form onSubmit={ onSubmit }>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    { /* Drop zone */ }
                     <Dropzone
                     onDrop={ onDrop }
                     multiple={ false }

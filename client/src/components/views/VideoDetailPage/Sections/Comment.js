@@ -43,14 +43,12 @@ function Comment(props) {
             <hr />
             { props.commentLists && props.commentLists.map((comment, index) => (
                 (!comment.responseTo &&
-                    <React.Fragment>
+                    <React.Fragment key={comment._id}>
                         <SingleComment comment={ comment } videoId={ videoId } refreshFunction={ props.refreshFunction } />
                         <ReplyComment parentCommentId={ comment._id } videoId={ videoId } commentLists={ props.commentLists } refreshFunction={ props.refreshFunction } />
                     </React.Fragment>
                 )
             ))}
-
-            { /* Root Comment Form */ }
 
             <form style={{ display: 'flex' }} onSubmit={ onSubmit } >
                 <textarea
